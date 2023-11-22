@@ -13,6 +13,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join("share", package_name, "config"), glob.glob("config/*.yaml")),
+        (os.path.join("share", package_name), glob.glob("launch/*.launch.py")),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -23,7 +24,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'arduino_serial = pruner_lbc.arduino_serial:main'
+            'arduino_node = pruner_lbc.arduino_serial:main'
         ],
     },
 )
